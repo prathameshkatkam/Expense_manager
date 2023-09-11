@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{%block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="mt-5">Edit Expense</h3>
+            <form action="/edit" method="POST">
+                <input type="hidden" name="id" value="{{expense.id}}"  id="">
+                <div class="form-group">
+                    <label>Date</label>
+                <input  class="form-control" type="date" value="{{expense.date}}" name="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label>Expense Name</label>
+                <input class="form-control" type="text" value="{{expense.expensename}}" name="expensename" id="expensename">
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                <input class="form-control" type="text" value="{{expense.amount}}" name="amount" id="amount">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                <select class="form-control" value="{{expense.category}}" name="category" id="category">
+                    <option value="food">Food</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="travel">Travel</option>
+                    <option value="other">Other</option>
+                </select>
+                </div>
+                
+                <input class="btn btn-info" type="submit" value="Update" name="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
